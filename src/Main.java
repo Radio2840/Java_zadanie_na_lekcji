@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,5 +32,21 @@ public class Main {
             System.out.println(n2.getNazwa());
         }
 
+
+     KochajacyProgramowac kochajacyProgramowac = new KochajacyProgramowac() {
+         @Override
+         public void programuj() {
+            System.out.println("programuj");
+         }
+     };
+        Function<String,Integer> zwroc = (s) -> s.length();
+        System.out.println(zwroc.apply("eo"));
+
+        Consumer<Integer> wyswietl = (w) -> System.out.println("Dostanę ocene: "+w);
+        wyswietl.accept(3);
+
+        BiFunction<Integer,Integer,Integer> iloczyn = (x,y) -> x*y;
+
+        System.out.println(iloczyn.apply(2,4));
     }
 }
