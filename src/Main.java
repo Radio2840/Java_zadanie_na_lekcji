@@ -20,7 +20,7 @@ public class Main {
             public int compare(Napoje o1, Napoje o2) {
                 int n1 = o1.getNazwa().compareTo(o2.getNazwa());
                 if(n1 ==0) {
-                    n1 = o1.getNazwa().compareTo(o2.getNazwa());
+                    n1 = o1.getClass().getSimpleName().compareTo(o2.getClass().getSimpleName());
                 }
                 return n1;
 
